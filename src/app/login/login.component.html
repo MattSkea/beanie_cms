@@ -1,0 +1,12 @@
+<div class="login-e2e wrapper">
+  <div>
+    <h2>LOGIN</h2>
+    <p>{{message}}</p>
+    <button (click)="login()" *ngIf="!authService.isLoggedIn" class="btn-login btn btn-primary">Login</button>
+    <button (click)="logout()" *ngIf="authService.isLoggedIn" class="btn btn-primary">Logout</button>
+
+  </div>
+  <div>
+     
+  </div>
+</div>

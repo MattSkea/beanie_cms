@@ -1,0 +1,18 @@
+<!-- {{beanie._id}}
+  {{beanie.myCustomerId}} -->
+<!-- {{beanie.color}} - {{beanie.size}} - {{beanie.fabric}} -->
+<div class="wrapper">
+  <mat-list>
+      <!-- <md-icon md-font-icon="android" aria-label="android"></md-icon>
+      <md-icon class="icon_home" aria-label="Home"></md-icon> -->
+    <div class="spinner-wrapper" [style.display]="showSpinner ? 'flex' : 'none'" >
+      <mat-spinner [style.display]="showSpinner ? 'block' : 'none'" color="warm"></mat-spinner>
+    </div>
+    <div *ngFor="let beanie of temp" (click)="onBeanieClick(beanie)" class="beanie-e2e">
+      <mat-list-item>
+        <button mat-raised-button color="basic"> {{beanie.color}} - {{beanie.size}} - {{beanie.fabric}}</button>
+      </mat-list-item>
+    </div>
+  </mat-list>
+</div>
+

@@ -1,0 +1,10 @@
+/* FORM STYLING */
+.form-input {
+    display: flex;
+    flex-direction: column;
+    margin: 1em;
+}
+ 
+.form-input > * {
+    width: 100%;
+}

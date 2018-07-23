@@ -1,0 +1,63 @@
+<div class="wrapper">
+  <form #beanieForm="ngForm" (ngSubmit)="onMySubmit(beanieForm)">
+    <h3>Add a new beanie</h3>
+    <div class="form-input">
+      <mat-form-field>
+        <label for="color">Color</label>
+        <input matInput type="text" name="color" id="color" [(ngModel)]="beanie.color" required minlength="3" #spy #color="ngModel">
+      </mat-form-field>
+
+      <div *ngIf="color.invalid && (color.dirty || color.touched)"  class="danger-alert">
+        <div *ngIf="color.errors.required">
+          Color is required
+        </div>
+        <div *ngIf="color.errors.minlength">
+          Must be atleast 3 characters
+        </div>
+      </div>
+    </div>
+
+    <div class="form-input">
+      <mat-form-field>
+        <label for="size">Size</label>
+        <input matInput type="text" name="size" id="size" [(ngModel)]="beanie.size" required minlength="1" #size="ngModel">
+      </mat-form-field>
+
+      <div *ngIf="size.invalid && (size.dirty || size.touched)" class="danger-alert">
+        <div *ngIf="size.errors.required">
+          Size is required
+        </div>
+        <div *ngIf="size.errors.minlength">
+          Must be atleast 1 character
+        </div>
+      </div>
+    </div>
+    <div class="form-input">
+      <mat-form-field>
+        <label for="fabric">Fabric</label>
+        <input matInput type="text" name="fabric" id="fabric" [(ngModel)]="beanie.fabric" required minlength="3" #fabric="ngModel">
+      </mat-form-field>
+      <div *ngIf="fabric.invalid && (fabric.dirty || fabric.touched)"  class="danger-alert">
+          <div *ngIf="fabric.errors.required">
+            Fabric is required
+          </div>
+          <div *ngIf="fabric.errors.minlength">
+            Must be atleast 3 character
+          </div>
+        </div>
+    </div>
+
+    <button mat-button (click)="cancel()" type="button" class="btn btn-default">
+      Cancel
+    </button>
+
+    <button mat-button class="btn btn-primary" type="submit" id="submit-e2e">
+      Save
+    </button>
+  </form>
+
+  <div>
+    <button mat-button (click)="delete()" class="btn btn-danger">
+      Delete
+    </button>
+  </div>
